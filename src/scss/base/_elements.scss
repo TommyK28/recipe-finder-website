@@ -1,0 +1,32 @@
+@use 'typography';
+@use 'variables' as *;
+
+// H1 wraps the logo
+
+h2 {
+    @include typography.apply-text-style('h2'); // Použije P2
+}
+
+h3 {
+    @include typography.apply-text-style('h3'); // Použije P3
+}
+
+h4 {
+    @include typography.apply-text-style('h4'); // Použije P4
+}
+
+h5 {
+    @include typography.apply-text-style('h5'); // Použije P5
+}
+
+h6 {
+    @include typography.apply-text-style('h6'); // Použije P6
+}
+
+p {
+    @include typography.apply-text-style('body-text'); // Použije P8
+}
+
+ul li {
+    @include typography.apply-text-style('ul-li-text'); // Použije P6
+}

@@ -1,0 +1,64 @@
+@use '../base/variables' as *;
+@use '../base/typography';
+
+.search {
+    width: 100%;
+
+    &__field {
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+        padding: 1rem 1.6rem;
+        border-radius: 10px;
+        border: 1px solid $c-neutral-300;
+        background-color: $c-neutral-0;
+        transition: $transition__default ease-in-out;
+
+        &:hover {
+            border-color: $c-neutral-900;
+        }
+
+        &:focus-within {
+            box-shadow:
+                0 0 0 2px $c-neutral-0,
+                0 0 0 4px $c-neutral-900;
+        }
+    }
+
+    &__icon {
+        flex-shrink: 0;
+        color: #173b36;
+    }
+
+    &__input {
+        font-family: $font-primary;
+        @include typography.apply-text-style('search-input-text');
+        flex: 1;
+        min-width: 0;
+        border: 0;
+        padding: 0;
+        color: $c-neutral-900;
+        background: transparent;
+        outline: none;
+
+        &::placeholder {
+            color: $c-neutral-900;
+            opacity: 0.7;
+        }
+    }
+
+    .visually-hidden {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        padding: 0;
+        border: 0;
+        clip: rect(0 0 0 0);
+        overflow: hidden;
+    }
+
+    @media (min-width: $breakpoint-md) {
+        width: 310px;
+    }
+}

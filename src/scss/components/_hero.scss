@@ -1,0 +1,83 @@
+@use '../base/variables' as *;
+@use '../base/typography';
+
+.hero {
+    text-align: left;
+    background-color: $c-neutral-50;
+    .container__layout {
+        padding-block-start: 4.8rem;
+        padding-block-end: 0;
+
+        @media (min-width: $breakpoint-lg) {
+            padding-block-start: 8rem;
+            padding-block-end: 9.6rem;
+        }
+    }
+
+    .icon--hero-shape {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1;
+    }
+
+    &__content {
+        position: relative;
+        z-index: 2;
+        margin-block-end: 4rem;
+
+        @media (min-width: $breakpoint-md) {
+            margin-block-end: 8rem;
+        }
+
+        @media (min-width: $breakpoint-md) {
+            text-align: center;
+            margin-block-end: 8rem;
+        }
+    }
+
+    &__title {
+        color: $c-neutral-900;
+        margin-block-end: 1.6rem;
+
+        @media (min-width: $breakpoint-lg) {
+            margin-block-end: 1.2rem;
+        }
+
+        &--highlight {
+            position: relative;
+
+            &::before {
+                content: '';
+                position: absolute;
+                bottom: 12px;
+                left: 0;
+                width: 100%;
+                height: 23px;
+                background-color: $c-orange-500;
+                border-radius: $b-radius-4;
+                opacity: 0.4;
+                z-index: -1;
+            }
+        }
+    }
+
+    &__text {
+        margin-block-end: 3.2rem;
+
+        @media (min-width: $breakpoint-lg) {
+            margin-block-end: 4rem;
+        }
+    }
+
+    &__img {
+        position: relative;
+        aspect-ratio: 16 / 9;
+        object-fit: cover;
+        border-radius: $b-radius-12;
+        box-shadow: 0 0 0 3.45px $c-neutral-0;
+        margin-inline: auto;
+        z-index: 2;
+    }
+}

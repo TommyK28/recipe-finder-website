@@ -1,0 +1,37 @@
+@use '../base/variables' as *;
+@use '../base/typography';
+
+.recipes {
+    .container__layout {
+        padding-block-start: 4.8rem;
+        padding-block-end: 0;
+
+        @media (min-width: $breakpoint-md) {
+            padding-block-start: 6.4rem;
+        }
+
+        @media (min-width: $breakpoint-lg) {
+            padding-block-start: 8rem;
+            padding-block-end: 9.6rem;
+        }
+    }
+
+    &__hero {
+        margin-block-end: 4.8rem;
+
+        @media (min-width: $breakpoint-lg) {
+            margin-block-end: 6.4rem;
+            text-align: center;
+        }
+    }
+
+    &__title {
+        color: $c-neutral-900;
+        margin-block-end: 1.2rem;
+    }
+
+    &__text {
+        max-width: 724px;
+        margin-inline: auto;
+    }
+}

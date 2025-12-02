@@ -1,0 +1,80 @@
+@use '../base/variables' as *;
+
+.benefits {
+    .container__layout {
+        padding-block-start: 6.4rem;
+        padding-block-end: 0;
+
+        @media (min-width: $breakpoint-md) {
+            padding-block-start: 8rem;
+            padding-block-end: 8rem;
+        }
+
+        @media (min-width: $breakpoint-lg) {
+            padding-block-start: 0rem;
+            padding-block-end: 9.6rem;
+        }
+    }
+
+    &__title {
+        text-align: left;
+        color: $c-neutral-900;
+
+        margin-block-end: 3.2rem;
+
+        @media (min-width: $breakpoint-md) {
+            margin-block-end: 4.8rem;
+        }
+
+        @media (min-width: $breakpoint-lg) {
+            text-align: center;
+        }
+    }
+
+    &__items {
+        display: grid;
+        align-items: start;
+        gap: 2.4rem;
+
+        @media (min-width: $breakpoint-md) {
+            gap: 3.2rem;
+        }
+
+        @media (min-width: $breakpoint-lg) {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    &__item-icon {
+        width: 60px;
+        height: 60px;
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid $c-neutral-200;
+        border-radius: $b-radius-12;
+        box-shadow: 0 1px 0 0 $c-neutral-200;
+        margin-block-end: 2rem;
+
+        @media (min-width: $breakpoint-md) {
+            margin-block-end: 2.4rem;
+        }
+
+        &--carrot {
+            color: $c-orange-500;
+        }
+
+        &--flash {
+            color: $c-teal-500;
+        }
+
+        &--search {
+            color: $c-indigo-500;
+        }
+    }
+
+    &__item-title {
+        color: $c-neutral-900;
+        margin-block-end: 1.2rem;
+    }
+}

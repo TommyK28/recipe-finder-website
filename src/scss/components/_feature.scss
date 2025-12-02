@@ -1,0 +1,86 @@
+@use '../base/variables' as *;
+
+.feature {
+    @media (min-width: $breakpoint-md) {
+        border-top: 1px solid $c-neutral-300;
+    }
+
+    .container__layout {
+        padding-block-start: 6.4rem;
+        padding-block-end: 0;
+
+        @media (min-width: $breakpoint-md) {
+            padding-block-start: 8rem;
+        }
+
+        @media (min-width: $breakpoint-lg) {
+            padding-block-start: 9.6rem;
+            padding-block-end: 9.6rem;
+        }
+    }
+
+    &__row {
+        display: grid;
+
+        @media (min-width: $breakpoint-lg) {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 4.8rem;
+            align-items: center;
+        }
+    }
+
+    &__content {
+        margin-block-end: 3.2rem;
+
+        @media (min-width: $breakpoint-md) {
+            margin-block-end: 4rem;
+        }
+
+        @media (min-width: $breakpoint-lg) {
+            margin-block-end: 0;
+        }
+    }
+
+    &__content-title {
+        color: $c-neutral-900;
+        margin-block-end: 2rem;
+    }
+
+    &__content-text {
+        &:first-of-type {
+            margin-block-end: 2rem;
+        }
+
+        &--highlight {
+            position: relative;
+            font-weight: $fw-bold;
+            white-space: nowrap;
+
+            &::before {
+                content: '';
+                position: absolute;
+                display: none;
+                bottom: 3px;
+                left: 0;
+                width: 100%;
+                height: 12px;
+                background-color: $c-orange-500;
+                border-radius: $b-radius-3;
+                z-index: -1;
+
+                @media (min-width: $breakpoint-md) {
+                    display: block;
+                }
+            }
+        }
+    }
+
+    &__img {
+        overflow: hidden;
+
+        img {
+            margin-inline: auto;
+            border-radius: $b-radius-10;
+        }
+    }
+}

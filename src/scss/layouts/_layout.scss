@@ -1,0 +1,22 @@
+@use '../base/variables' as *;
+
+.container {
+    position: relative;
+    max-width: 1440px;
+    margin-inline: auto;
+}
+
+.container__layout {
+    padding-block: 6.4rem;
+    padding-inline: 1.6rem;
+
+    @media (min-width: $breakpoint-md) {
+        padding-block: 8rem;
+        padding-inline: 3.2rem;
+    }
+
+    @media (min-width: $breakpoint-lg) {
+        padding-block: 9.6rem;
+        padding-inline: 12.4rem;
+    }
+}

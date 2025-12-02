@@ -1,0 +1,62 @@
+@use '../base/variables' as *;
+
+.beyond-the-plate {
+    .container__layout {
+        padding-block: 4.8rem;
+
+        @media (min-width: $breakpoint-md) {
+            padding-block-start: 8rem;
+            padding-block-end: 0;
+        }
+
+        @media (min-width: $breakpoint-lg) {
+            padding-block: 9.6rem;
+        }
+    }
+
+    &__row {
+        display: grid;
+        gap: 3.2rem;
+
+        @media (min-width: $breakpoint-md) {
+            gap: 4rem;
+        }
+
+        @media (min-width: $breakpoint-lg) {
+            grid-template-columns: repeat(2, 1fr);
+            align-items: center;
+            gap: 6.4rem;
+        }
+    }
+
+    &__title {
+        color: $c-neutral-900;
+        margin-block-end: 2rem;
+    }
+
+    &__text {
+        margin-block-end: 1.2rem;
+    }
+
+    &__list {
+        list-style: disc;
+        padding-inline-start: 2.6rem;
+    }
+
+    &__img {
+        margin-inline: auto;
+        border-radius: $b-radius-20;
+
+        @media (min-width: $breakpoint-lg) {
+            box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+        }
+    }
+
+    & + .cta-section {
+        .container__layout {
+            @media (max-width: $breakpoint-md - 1) {
+                padding-block-start: 0;
+            }
+        }
+    }
+}

@@ -1,0 +1,140 @@
+@use '../base/variables' as *;
+@use '../base/typography';
+
+.filter-dropdown {
+    position: relative;
+    width: 100%;
+
+    @media (min-width: $breakpoint-md) {
+        width: auto;
+    }
+
+    &__button {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: inherit;
+        gap: 0.8rem;
+        padding: 1rem 1.6rem;
+        border-radius: 10px;
+        border: 1px solid $c-neutral-300;
+        background-color: $c-neutral-0;
+        transition: $transition__default ease-in-out;
+
+        & > span {
+            font-family: $font-primary;
+            @include typography.apply-text-style('search-input-text');
+            color: $c-neutral-900;
+        }
+
+        &.open,
+        &:hover {
+            outline: 1px solid $c-neutral-900;
+        }
+
+        @media (min-width: $breakpoint-md) {
+            justify-content: start;
+        }
+    }
+
+    &__menu {
+        position: absolute;
+        left: 0;
+        top: calc(100% + 8px);
+        width: 100%;
+        padding: 0.8rem;
+        border-radius: 10px;
+        border: 1px solid $c-neutral-300;
+        background-color: $c-neutral-0;
+        z-index: 10;
+
+        @media (min-width: $breakpoint-md) {
+            width: 240px;
+        }
+    }
+
+    &__radio {
+        display: flex;
+        align-items: center;
+        font-family: $font-primary;
+        color: $c-strong-950;
+        @include typography.apply-text-style('search-input-text');
+        cursor: pointer;
+        border: 1px solid transparent;
+        border-radius: 8px;
+        gap: 0.8rem;
+        padding: 8px;
+
+        &:focus-within {
+            border-color: $c-neutral-900;
+        }
+
+        &:hover .filter-dropdown__control {
+            border-color: $c-neutral-800;
+
+            &::after {
+                background-color: $c-neutral-800;
+                opacity: 1;
+            }
+        }
+
+        input {
+            position: absolute;
+            opacity: 0;
+            width: 0;
+            height: 0;
+            margin: 0;
+
+            &:checked + .filter-dropdown__control {
+                border-color: $c-neutral-900;
+
+                &::after {
+                    opacity: 1;
+                }
+            }
+
+            &:focus-within {
+                outline: none;
+                box-shadow: 0 0 0 4px $c-neutral-200;
+            }
+        }
+    }
+
+    &__control {
+        position: relative;
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+        border: 2px solid $c-neutral-200;
+        background-color: $c-neutral-0;
+        flex-shrink: 0;
+        transition: $transition__default;
+
+        &::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 50%;
+            background-color: $c-neutral-900;
+            opacity: 0;
+            transform: scale(0.6);
+            transition: $transition__default;
+        }
+    }
+
+    &__clear {
+        width: 100%;
+        text-align: left;
+        font-family: $font-primary;
+        color: $c-strong-950;
+        @include typography.apply-text-style('search-input-text');
+        border: 1px solid transparent;
+        border-radius: 8px;
+        padding: 0.2rem 0.8rem;
+
+        &:focus-within {
+            border-color: $c-neutral-900;
+            outline: none;
+        }
+    }
+}

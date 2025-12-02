@@ -1,0 +1,49 @@
+@use '../base/variables' as *;
+@use '../base/typography';
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-family: $font-primary;
+    @include typography.apply-text-style('button-text-primary');
+    cursor: pointer;
+    border: none;
+    border-radius: $b-radius-8;
+    padding: 1.2rem 1.6rem;
+    transition: background-color $transition__default;
+
+    &-primary {
+        color: $c-neutral-0;
+        background-color: $c-neutral-900;
+    }
+
+    &-secondary {
+        @include typography.apply-text-style('button-text-secondary');
+        color: $c-neutral-0;
+        background-color: $c-neutral-900;
+        border-radius: $b-radius-pill;
+    }
+
+    &--full {
+        width: 100%;
+    }
+
+    &--small {
+        @include typography.apply-text-style('button-text-small');
+    }
+
+    &:hover:not(:disabled) {
+        background-color: $c-neutral-800;
+    }
+
+    &:focus,
+    &:focus-within {
+        outline: 3px solid $c-neutral-900;
+    }
+
+    &:disabled {
+        cursor: not-allowed;
+        opacity: 0.6;
+    }
+}

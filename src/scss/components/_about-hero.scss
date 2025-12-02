@@ -1,0 +1,47 @@
+@use '../base/variables' as *;
+
+.about-hero {
+    border-bottom: 1px solid $c-neutral-200;
+
+    .container__layout {
+        @media (min-width: $breakpoint-lg) {
+            padding-block-start: 8rem;
+        }
+    }
+
+    &__row {
+        display: grid;
+        gap: 4rem;
+
+        @media (min-width: $breakpoint-md) {
+            gap: 6.4rem;
+        }
+
+        @media (min-width: $breakpoint-lg) {
+            grid-template-columns: repeat(2, 1fr);
+            align-items: center;
+        }
+    }
+
+    &__eyebrow {
+        display: inline;
+        color: $c-neutral-900;
+        font-weight: $fw-bold;
+        border-radius: $b-radius-6;
+        background-color: $c-orange-500;
+        padding: 0.2rem 0.6rem;
+    }
+
+    &__title {
+        color: $c-neutral-900;
+        padding-block: 2.4rem;
+    }
+
+    &__text {
+        margin-block-end: 1.6rem;
+    }
+
+    &__img {
+        margin-inline: auto;
+    }
+}
