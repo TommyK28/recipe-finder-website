@@ -7,7 +7,7 @@
                 <p>Made with ❤️ and 🥑</p>
 
                 <div class="footer__social-links">
-                    <a href="#" class="footer__social-link">
+                    <a href="#" class="footer__social-link" aria-label="Link to Instagram">
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             width="22"
@@ -29,7 +29,8 @@
                             />
                         </svg>
                     </a>
-                    <a href="#" class="footer__social-link">
+
+                    <a href="#" class="footer__social-link" aria-label="Link to MSN">
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             width="25"
@@ -45,7 +46,8 @@
                             </g>
                         </svg>
                     </a>
-                    <a href="#" class="footer__social-link">
+
+                    <a href="#" class="footer__social-link" aria-label="Link to TikTok">
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             width="20"
