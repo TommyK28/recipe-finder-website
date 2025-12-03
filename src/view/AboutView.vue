@@ -1,4 +1,5 @@
 <script setup>
+import { getPublicImagePath } from '@/utils/imagePath'
 import CtaSection from '@/components/AppCtaSection.vue'
 import BeyondThePlate from '@/components/AppBeyondThePlate.vue'
 import ContentBlock from '@/components/AppContentBlock.vue'
@@ -60,9 +61,19 @@ const foodPhilosophyFeatures = [
                 </div>
 
                 <picture>
-                    <source media="(min-width: 960px)" srcset="/images/about-hero-des.png" />
-                    <source media="(min-width: 576px)" srcset="/images/about-hero-tab.png" />
-                    <img class="about-hero__img" src="/images/about-hero-mob.png" alt="" />
+                    <source
+                        media="(min-width: 960px)"
+                        :srcset="getPublicImagePath('images/about-hero-des.png')"
+                    />
+                    <source
+                        media="(min-width: 576px)"
+                        :srcset="getPublicImagePath('images/about-hero-tab.png')"
+                    />
+                    <img
+                        class="about-hero__img"
+                        :src="getPublicImagePath('images/about-hero-mob.png')"
+                        alt=""
+                    />
                 </picture>
             </div>
         </div>

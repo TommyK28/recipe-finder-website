@@ -1,6 +1,7 @@
 <script setup>
 import { useRoute } from 'vue-router'
 import { ref, onMounted, watch } from 'vue'
+import { getPublicImagePath } from '@/utils/imagePath'
 import RecipeCard from '../components/AppRecipeCard.vue'
 import allRecipes from '@/data/data.json'
 
@@ -36,8 +37,15 @@ watch(() => route.params.slug, fetchRecipe)
             <div v-else-if="recipe">
                 <div class="recipe-detail__row">
                     <picture class="recipe-detail__img-wrapper">
-                        <source media="(min-width: 960px)" :srcset="`${recipe.image.large}`" />
-                        <img class="recipe-detail__img" :src="`${recipe.image.small}`" alt="" />
+                        <source
+                            media="(min-width: 960px)"
+                            :srcset="getPublicImagePath(`${recipe.image.large}`)"
+                        />
+                        <img
+                            class="recipe-detail__img"
+                            :src="getPublicImagePath(`${recipe.image.small}`)"
+                            alt=""
+                        />
                     </picture>
                     <div class="recipe-detail__content">
                         <h3 class="recipe-detail__title">{{ recipe.title }}</h3>

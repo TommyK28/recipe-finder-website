@@ -1,5 +1,6 @@
 <script setup>
 import AppButton from '@/components/AppBaseButton.vue'
+import { getPublicImagePath } from '@/utils/imagePath'
 
 defineProps({
     recipes: { type: Array, required: true },
@@ -9,8 +10,8 @@ defineProps({
 <template>
     <div class="recipe-card" v-for="(recipe, index) in recipes" :key="index">
         <picture>
-            <source media="(min-width: 576px)" :srcset="recipe.image.large" />
-            <img :src="recipe.image.small" alt="" class="recipe-card__img" />
+            <source media="(min-width: 576px)" :srcset="getPublicImagePath(`${recipe.image.large}`)" />
+            <img :src="getPublicImagePath(`${recipe.image.small}`)" alt="" class="recipe-card__img" />
         </picture>
         <h6 class="recipe-card__title">{{ recipe.title }}</h6>
         <p class="recipe-card__text">

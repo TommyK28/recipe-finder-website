@@ -1,4 +1,5 @@
 <script setup>
+import { getPublicImagePath } from '@/utils/imagePath'
 import AppButton from '@/components/AppBaseButton.vue'
 import BenefitsView from '@/components/AppBenefits.vue'
 import Feature from '@/components/AppFeature.vue'
@@ -42,9 +43,19 @@ import CtaSection from '@/components/AppCtaSection.vue'
             </div>
 
             <picture>
-                <source media="(min-width: 960px)" srcset="/images/hp-bg-img-des.png" />
-                <source media="(min-width: 576px)" srcset="/images/hp-bg-img-tab.png" />
-                <img class="hero__img" src="/images/hp-bg-img-mob.png" alt="" />
+                <source
+                    media="(min-width: 960px)"
+                    :srcset="getPublicImagePath('images/hp-bg-img-des.png')"
+                />
+                <source
+                    media="(min-width: 576px)"
+                    :srcset="getPublicImagePath('images/hp-bg-img-tab.png')"
+                />
+                <img
+                    class="hero__img"
+                    :src="getPublicImagePath('images/hp-bg-img-mob.png')"
+                    alt=""
+                />
             </picture>
         </div>
     </section>
@@ -58,10 +69,16 @@ import CtaSection from '@/components/AppCtaSection.vue'
         subtext="Whether you’re new to the kitchen or just need fresh ideas, we’ve got you
                         covered."
         :imageSources="[
-            { media: '(min-width: 960px)', srcset: '/images/preparing-food-des.png' },
-            { media: '(min-width: 576px)', srcset: '/images/preparing-food-tab.png' },
+            {
+                media: '(min-width: 960px)',
+                srcset: getPublicImagePath('images/preparing-food-des.png'),
+            },
+            {
+                media: '(min-width: 576px)',
+                srcset: getPublicImagePath('images/preparing-food-tab.png'),
+            },
         ]"
-        imageSrc="/images/preparing-food-mob.png"
+        :imageSrc="getPublicImagePath('images/preparing-food-mob.png')"
         imageAlt="Chef preparing food"
     />
 
