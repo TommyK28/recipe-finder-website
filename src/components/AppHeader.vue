@@ -5,15 +5,18 @@ import AppButton from '@/components/AppBaseButton.vue'
 
 const isNavOpen = ref(false)
 const route = useRoute()
+const navToggleLabel = ref('Open nav menu')
 
 const toggleNav = () => {
     isNavOpen.value = !isNavOpen.value
+    navToggleLabel.value = isNavOpen.value ? 'Close nav menu' : 'Open nav menu'
 }
 
 watch(
     () => route.path,
     () => {
         isNavOpen.value = false
+        navToggleLabel.value = 'Open nav menu'
     },
 )
 </script>
@@ -76,6 +79,7 @@ watch(
             class="header__nav-toggle"
             type="button"
             aria-controls="header-nav"
+            :aria-label="navToggleLabel"
             :aria-expanded="isNavOpen.toString()"
             @click="toggleNav"
         >
